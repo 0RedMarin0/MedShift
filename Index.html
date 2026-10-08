@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МедСмена</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <nav class="nav-group">
+          <div class="logo">МедСмена</div>
+          <div class="develop-man">Разработчик: Слепов Д.С.</div>
+        </nav>
+
+        <nav class="nav-group">
+          <div class="shift-info">Смена: <span>Ночная</span></div>
+          <div class="user-info">Дежурный: <span>Серова</span></div>
+        </nav>
+
+        <nav class="nav-group">
+          <div>Неврология: <span>12</span></div>
+          <div>Реабилитация: <span>8</span></div>
+        </nav>
+
+        <nav class="nav-group">
+          <div class="db-status db-connected">● База подключена</div>
+          <button type="button" class="btn-subtle">Подключить базу</button>
+        </nav>
+
+        <nav class="nav-group nav-actions">
+          <button type="button" class="nav-button add-patient-button">+ Поступивший</button>
+          <button type="button" class="nav-button end-shift-button">Сдать смену</button>
+        </nav>
+      </div>
+
+      <!-- Живая сводка -->
+      <div class="info-panel">
+        <div class="stat-item">Поступило: <b>2</b></div>
+        <div class="stat-item">Выписано: <b>1</b></div>
+        <div class="stat-item">Дети: <b>20</b> / <b class="text-accent">16 факт</b></div>
+        <div class="stat-item">Матери: <b>10</b> (до 4л: <b>6</b> | >4л: <b>2</b> | инв: <b>2</b>)</div>
+        <div class="stat-item">Реанимация: <b>1</b></div>
+        <div class="stat-item stat-heavy is-active">Тяжёлые: <b>1</b></div>
+      </div>
+
+      <!-- Быстрый фильтр -->
+      <div class="search-filter">
+        <input type="text" placeholder="Быстрый поиск по фамилии или палате..." />
+        <button type="button" class="btn-subtle">Сброс</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Шаблон одной палаты (301) -->
+      <section class="room-card">
+        <div class="room-header">
+          <span class="room-title">Палата 301</span>
+          <span class="room-badge">Отделение 1</span>
+        </div>
+
+        <ul class="patient-list">
+          <!-- Пример: пациент на месте -->
+          <li class="patient-row status-here">
+            <div class="patient-status-indicator" title="Здесь"></div>
+            <div class="patient-data">
+              <span class="patient-fio">Иванов Иван</span>
+              <span class="patient-meta">3 г. • ОВД3 • с мамой</span>
+            </div>
+            <div class="patient-actions">
+              <button type="button" class="btn-row">Инфо</button>
+              <button type="button" class="btn-row">Ред.</button>
+              <button type="button" class="btn-row btn-discharge">Выписать</button>
+            </div>
+          </li>
+
+          <!-- Пример: тяжелый пациент -->
+          <li class="patient-row status-heavy">
+            <div class="patient-status-indicator" title="Тяжелый"></div>
+            <div class="patient-data">
+              <span class="patient-fio">Петров Семён</span>
+              <span class="patient-meta">7 мес. • Инд пит • Тяжёлый</span>
+            </div>
+            <div class="patient-actions">
+              <button type="button" class="btn-row">Инфо</button>
+              <button type="button" class="btn-row">Ред.</button>
+              <button type="button" class="btn-row btn-discharge">Выписать</button>
+            </div>
+          </li>
+
+          <!-- Пример: дневной стационар / дома -->
+          <li class="patient-row status-home">
+            <div class="patient-status-indicator" title="Дома"></div>
+            <div class="patient-data">
+              <span class="patient-fio">Сидорова Анна</span>
+              <span class="patient-meta">8 л. • ЩД • Дневной</span>
+            </div>
+            <div class="patient-actions">
+              <button type="button" class="btn-row">Инфо</button>
+              <button type="button" class="btn-row">Ред.</button>
+              <button type="button" class="btn-row btn-discharge">Выписать</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
